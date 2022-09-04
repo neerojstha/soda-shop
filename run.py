@@ -19,7 +19,7 @@ def get_sales_data():
     """
     print("please enter last day sales.")
     print("data should be six numbers and separated by commas.")
-    print("Example: 11,22,33,44,55,66\n")
+    print("Example: 11,22,33,44,55\n")
 
     data_str = input("submit your data here:")
     
@@ -31,12 +31,15 @@ def validate_data(values):
     inside try function check the validity of the data 
     with user submitted data
     """
+    print(values)
     try:
-        if len(values) != 6:
+        if len(values) != 5:
             raise ValueError(
-                f"Exactly 6 values required, you provided {len(values)}"
+                f"Exactly 5 values required, you provided {len(values)}"
             )
     except ValueError as e:
         print(f"invalid data: {e}, please try again.\n")
         print(values)
+
+
 get_sales_data()
