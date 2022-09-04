@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "sodashop",
+  "private_key_id": "7edf6f3ac93a01aef63b3310066e22c39f293eee",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDh6LKDEE6fjFy5\ni/PHa4E5Sd+/jb1lunRa8P8uVJm26ex7YJM4aBkKsC1f3wNRvATBpFCM36naQT4R\nQW3S9s3xeY3PxWaD9cJcKyB/2yvzDDgQ66Z1BMENFH6CbvyHoCZtt9/C555uU5qp\nGEmGRVuDaQ4bvOSiviiG8H5E/ZbOpsaL3a6OdX+HBJyKx9AFlLojEtBHG1PbTMm+\n2NXuqeM/CQsK/SLp+xtVAWCHedjBSvuSE7EGY7hVeoK97kaP6shfw8YOmcoivanr\n5q50129KewiETI2BhLIr33p+vbRZA9EuhSTe7Lsc53RZywtXbMGTbOprVL+hl9m/\nSxohiXCXAgMBAAECggEAOAetYslkHrlC9Dgsbd0Rj2JtrsZaX8VHf5i/Sb/s4guR\nviX9TaOv9lEs59bZrWd7LIXy/oWozHubB8+ZDBZvjMEvtYUJwJfvLUn7BQsYku8I\nZtXzkplrwjE/kV0yn/bOIS9WPbKRvl5ZATCHZ9iC8oxXVfTbJiwQxCsYvkbBJR6L\nwVt3jpY6mM74tDOV5QsbuSrpYYosRzgz250y0ktmCeucqoqiLKZOgM7IAQTISeP2\nmZ+txOGm1oDtGMM2FEpMUQqXfwIB7ATgV/9g18UzfdmzpARINsSuvrif3xyxh3OL\nUbUey7N4MMA8FbIzrzTDps6XejXSJMthj/+/LHD7FQKBgQD6zLzsFB/geJVMD8Q3\n5tdzZWoJTMPwjQdulUVouKRsVG2Fc2o6HBjXZT7Gn3cV3mj/yUrQfYtAek5/iSP6\ng7Z1NrtBzAm3LsRkUmIAfGfLGI4KPe8Uh+AjN0grvqJ6ArjQkxvBZ5z4WfvzxCG5\nymjrS9/gRSi7yZbLYU0l6u/6GwKBgQDml9ZeS2eEiJ5Fcf4uyRXzGU+whRftoJX+\nA9TTzaNfGSMRhBZHwuQZCH2A2BlrgWGwOYvtox3xjs5vdRMkE1E1LQDqu4LKWvh8\njzr5eJzSkY23hlU3WKU0NVrgGUNe/+Xk8GukAqCYww4TMpm6e7UFXoyaIErs+URC\n7NG4BAqLNQKBgBgxe+ACKPkMaMqHktQZrprxI4N2JkikMh1WxPVPKn1Qv6fp9Eta\nvoK4v4+FfoVbiSFzl4X5Nl+n7L6cyh22avlvqCy2tBE5r7RFxjJpzdFnsvwF8XQ3\nj0WWZZ3iq+W9MXrdVgYYKqpCc+2V8/LqNajNDvGhekZzMdq4riqEOVYVAoGAAqKn\nm4pHE5ewH2EPI5++tXmLlJvgyyFztWR70TPfcx3JbdDRpF5Q1wxmysstdzISWL4/\noCamF/Wm3FU9M8NYwT/Ta9tawk9J2bqVVPaQ7EMnmHpbjPdhY/hcIoWHZJWOHhC1\nWjmBdl18UrHYWe5CAl6zQqutz4mFwzILr4u0RyUCgYBoCj4USEud/x1gJfYtuoTA\nEy378HjJ2kNlBX3kZaTULxhap5IJgFC60eADk1qS+uyIpH4El4ZqzMUNWbBm6neW\ns7aRLW1IDPPSJPCiQKETJ0GO30M6LRTu1jOzCEedY1vb4jdiuyEvsKuM99s3WXfF\nEWwYvlzN+FCQMrfCe/kXPw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "sodashop@sodashop.iam.gserviceaccount.com",
+  "client_id": "103607670693534407680",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/sodashop%40sodashop.iam.gserviceaccount.com"
+}
