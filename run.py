@@ -63,10 +63,16 @@ def calculate_order_data(sales_row):
     future order inventory limit of 99
     """
 
-    print("calculating order data...\nn")
+    print("calculating order data...\n")
     inventory = SHEET.worksheet("inventory").get_all_values()
     inventory_row = inventory[-1]
-    print(inventory_row)
+    
+    order_data = []
+    for inventory, sales in zip(sales_row, sales_row):
+        order = (inventory-sales) * 1.05
+        order_data.append(order)
+    print(order_data)    
+
 
 
 
