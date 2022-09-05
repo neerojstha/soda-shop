@@ -1,5 +1,6 @@
 import gspread
 from google.oauth2.service_account import Credentials
+from pprint import pprint
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -56,7 +57,28 @@ def update_sales_worksheet(data):
     sales_worksheet.append_row(data)
     print("sales worksheet updated successfully.\n")    
 
-    
-data = get_sales_data()
-sales_data = [int(num) for num in data]
-update_sales_worksheet(sales_data)
+def calculate_order_data(sales_row):
+    """
+    compare sales and inventory for future order.
+    future order inventory limit of 99
+    """
+
+    print("calculating order data...\nn")
+    inventory = SHEET.worksheet("inventory").get_all_values()
+    inventory_row = inventory[-1]
+    print(inventory_row)
+
+
+
+def main():
+    """
+    all function working
+    """    
+    data = get_sales_data()
+    sales_data = [int(num) for num in data]
+    update_sales_worksheet(sales_data)
+    calculate_order_data(sales_data)
+
+print("Soda shop data Automation") 
+main()
+
