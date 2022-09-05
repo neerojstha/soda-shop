@@ -47,24 +47,7 @@ def validate_data(values):
         return False
 
     return True
-
-def update_sales_worksheet(data):
-    """
-    updating new sales report with new lines added
-    """
-    print("updating sales worksheet...\n")
-    sales_worksheet = SHEET.worksheet("sales")
-    sales_worksheet.append_row(data)
-    print("sales worksheet updated successfully.\n") 
-
-def update_excess_worksheet(data):
-    """
-    updating new excess report with new lines added
-    """
-    print("updating excess worksheet...\n")
-    excess_worksheet = SHEET.worksheet("excess")
-    excess_worksheet.append_row(data)
-    print("excess worksheet updated successfully.\n")        
+       
 
 def update_worksheet(data, worksheet):
     """
