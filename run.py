@@ -57,16 +57,25 @@ def update_sales_worksheet(data):
     sales_worksheet.append_row(data)
     print("sales worksheet updated successfully.\n") 
 
-def update_order_worksheet(data):
+def update_excess_worksheet(data):
     """
-    updating new order report with new lines added
+    updating new excess report with new lines added
     """
-    print("updating order worksheet...\n")
-    order_worksheet = SHEET.worksheet("order")
-    order_worksheet.append_row(data)
-    print("order worksheet updated successfully.\n")        
+    print("updating excess worksheet...\n")
+    excess_worksheet = SHEET.worksheet("excess")
+    excess_worksheet.append_row(data)
+    print("excess worksheet updated successfully.\n")        
 
-def calculate_order_data(sales_row):
+def update_worksheet(data, worksheet):
+    """
+    updating relevant worksheet with recent data
+    """
+    print(f"updatinng {worksheet} worksheet...\n")
+    worksheet_to_update = SHEET.worksheet(worksheet)
+    worksheet_to_update.append_row(data)
+    print(f"{worksheet} worksheet updated successfully\n")
+
+def calculate_excess_data(sales_row):
     """
     compare sales and inventory for future order.
     future order inventory limit of 99
@@ -76,11 +85,11 @@ def calculate_order_data(sales_row):
     inventory = SHEET.worksheet("inventory").get_all_values()
     inventory_row = inventory[-1]
     
-    order_data = []
+    excess_data = []
     for inventory, sales in zip(sales_row, sales_row):
-        order = (inventory-sales) * 1.05
-        order_data.append(order)
-    print(order_data)    
+        excess = int(inventory) - sales
+        excess_data.append(excess)
+    print(excess_data)    
 
 def get_last_6_entries_sales():
     """
@@ -103,9 +112,9 @@ def main():
     """    
     data = get_sales_data()
     sales_data = [int(num) for num in data]
-    update_sales_worksheet(sales_data)
-    new_order_data = calculate_order_data(sales_data)
-    update_order_worksheet(new_order_data)
+    update_worksheet(sales_data, "sales")
+    new_excess_data = calculate_excess_data(sales_data)
+    update_worksheet(new_excess_data, "excess")
 
 print("Soda shop data Automation") 
 main()
