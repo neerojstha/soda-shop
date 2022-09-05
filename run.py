@@ -15,7 +15,7 @@ SHEET = GSPREAD_CLIENT.open('soda_shop')
 
 def get_sales_data():
     """
-    Collecting sales details fromm the user
+    Collecting sales details from the user
     """
     while True:
         print("please enter last day sales.")
@@ -45,5 +45,18 @@ def validate_data(values):
         print(f"invalid data: {e}, please try again.\n")
         return False
 
+    return True
 
+def update_sales_worksheet(data):
+    """
+    updating new sales report with new lines added
+    """
+    print("updating sales worksheet...\n")
+    sales_worksheet = SHEET.worksheet("sales")
+    sales_worksheet.append_row(data)
+    print("sales worksheet updated successfully.\n")    
+
+    
 data = get_sales_data()
+sales_data = [int(num) for num in data]
+update_sales_worksheet(sales_data)
