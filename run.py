@@ -73,8 +73,20 @@ def calculate_order_data(sales_row):
         order_data.append(order)
     print(order_data)    
 
+def get_last_6_entries_sales():
+    """
+    collecting last 6 entries from the book.
+    """
+    sales = SHEET.worksheet("sales")
 
+    columns = []
+    for ind in range(1, 6):
+        column = sales.col_values(ind)
+        columns.append(columnh[-6:])
 
+        return columns
+
+    
 
 def main():
     """
