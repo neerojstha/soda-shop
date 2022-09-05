@@ -72,7 +72,7 @@ def calculate_excess_data(sales_row):
     for inventory, sales in zip(sales_row, sales_row):
         excess = int(inventory) - sales
         excess_data.append(excess)
-    print(excess_data)    
+    return excess_data   
 
 def get_last_6_entries_sales():
     """
@@ -83,11 +83,25 @@ def get_last_6_entries_sales():
     columns = []
     for ind in range(1, 6):
         column = sales.col_values(ind)
-        columns.append(columnh[-6:])
+        columns.append(column[-6:])
 
-        return columns
+    return columns
 
-    
+def calculate_inventory_data(data):
+    """ 
+    calculate the average inventory for each item, adding 15%
+    """
+    print("calculating inventory data...\n")
+    new_inventory_data = []
+
+    for column in data:
+        int_column = [int(num) for num in column]
+        average = sum(int_column) / len(int_column)
+        inventory_num = average * 1.15
+        new_inventory_data.append(round(inventory_num))
+
+    return new_inventory_data    
+        
 
 def main():
     """
@@ -98,7 +112,13 @@ def main():
     update_worksheet(sales_data, "sales")
     new_excess_data = calculate_excess_data(sales_data)
     update_worksheet(new_excess_data, "excess")
+    sales_columns = get_last_6_entries_sales()
+    inventory_data = calculate_inventory_data(sales_columns)
+    update_worksheet(inventory_data, "inventory")
+
+
 
 print("Soda shop data Automation") 
 main()
+
 
