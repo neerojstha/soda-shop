@@ -14,27 +14,26 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('soda_shop')
 
 
-def get_sales_data():
+def sales():
     """
-    Collecting sales details from the user
+    Collecting sales information
     """
     while True:
-        print("please enter last day sales.")
+        print("Enter last day sales.")
         print("data should be five numbers and separated by commas.")
         print("Example: 11,22,33,44,55\n")
 
-        data_str = input("submit your data here:\n")
+        str_data = input("Enter your data here:\n")
     
-        sales_data  = data_str.split(",")
-        if validate_data(sales_data):
-            print("Data is valid")
+        data_sales  = str_data.split(",")
+        if authorize_data(data_sales):
+            print("Accurate data")
             break
-    return sales_data
+    return data_sales
 
-def validate_data(values):
+def authorize(values):
     """
-    inside try function check the validity of the data 
-    with user submitted data
+    checking data geneunity
     """
   
     try:
@@ -43,7 +42,7 @@ def validate_data(values):
                 f"Exactly 5 values required, you provided {len(values)}"
             )
     except ValueError as e:
-        print(f"invalid data: {e}, please try again.\n")
+        print(f"unacceptable data: {e}, please try again.\n")
         return False
 
     return True
@@ -53,12 +52,12 @@ def update_worksheet(data, worksheet):
     """
     updating relevant worksheet with recent data
     """
-    print(f"updatinng {worksheet} worksheet...\n")
+    print(f"updating {worksheet} worksheet...\n")
     worksheet_to_update = SHEET.worksheet(worksheet)
     worksheet_to_update.append_row(data)
     print(f"{worksheet} worksheet updated successfully\n")
 
-def calculate_excess_data(sales_row):
+def excess(sales_row):
     """
     compare sales and inventory for future order.
     future order inventory limit of 99
@@ -74,7 +73,7 @@ def calculate_excess_data(sales_row):
         excess_data.append(excess)
     return excess_data   
 
-def get_last_6_entries_sales():
+def recent_6_entries_sales():
     """
     collecting last 6 entries from the book.
     """
@@ -87,27 +86,27 @@ def get_last_6_entries_sales():
 
     return columns
 
-def calculate_inventory_data(data):
+def inventory(data):
     """ 
     calculate the average inventory for each item, adding 15%
     """
     print("calculating inventory data...\n")
-    new_inventory_data = []
+    new_inventory = []
 
     for column in data:
         int_column = [int(num) for num in column]
         average = sum(int_column) / len(int_column)
         inventory_num = average * 1.15
-        new_inventory_data.append(round(inventory_num))
+        new_inventory.append(round(inventory_num))
 
-    return new_inventory_data    
+    return new_inventory    
         
 
 def main():
     """
     all function working
     """    
-    data = get_sales_data()
+    data = sales()
     sales_data = [int(num) for num in data]
     update_worksheet(sales_data, "sales")
     new_excess_data = calculate_excess_data(sales_data)
